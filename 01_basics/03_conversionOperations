@@ -1,0 +1,19 @@
+let score = "33abc"
+//console.log(typeof score)
+//console.log(typeof (score))
+let valueInNumber = Number(score)
+//console.log(typeof valueInNumber)
+//console.log(valueInNumber) // this will return NaN because "33abc" cannot be converted to a number
+
+let isLoggedIn = 1
+let booleanIsLoggedIn = Boolean(isLoggedIn)
+//console.log(booleanIsLoggedIn)
+// 1 => true
+// 0 => false
+// "" => false
+// "paridhi" => true
+
+let someNumber = 4
+let stringNumber = String(someNumber)
+console.log(stringNumber)
+console.log(typeof stringNumber)
