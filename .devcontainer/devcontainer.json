@@ -1,0 +1,17 @@
+{
+  "name": "Node.js Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "settings": {
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 14,
+    "editor.wordWrap": "on"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000],
+  "remoteUser": "node"
+}
