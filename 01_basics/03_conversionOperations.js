@@ -32,3 +32,6 @@ console.log("1" + 2) // this will return "12" because when we add a string and a
 console.log("1" - 2) // this will return -1 because when we subtract a number from a string, the string is converted to a number and the operation is performed
 console.log("1" + 2 + 2)
 console.log(1 + 2 + "2") // this will return "32" because when we add a number and a string, the number is converted to a string and concatenated
+
+
+
