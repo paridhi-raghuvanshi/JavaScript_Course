@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #start {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #start:active {
+            background-color: #45a049;
+        }
+
+        #stop {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #stop:active {
+            background-color: #da190b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Background Color Changer</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script>
+        let intervalId = null;
+
+        const colors = [
+            '#FF5733', '#33FF57', '#3357FF', '#FF33F6', '#33FFF6',
+            '#FFD700', '#FF6347', '#4169E1', '#32CD32', '#FF8C00',
+            '#9370DB', '#20B2AA', '#FF1493', '#00CED1', '#7FFF00'
+        ];
+
+        function getRandomColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        document.getElementById('start').addEventListener('click', function() {
+            if (intervalId === null) {
+                intervalId = setInterval(function() {
+                    document.body.style.backgroundColor = getRandomColor();
+                }, 1000);
+            }
+        });
+
+        document.getElementById('stop').addEventListener('click', function() {
+            if (intervalId !== null) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        });
+    </script>
+</body>
+</html>
